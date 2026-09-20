@@ -10,33 +10,128 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ContactoRouteImport } from './routes/contacto'
+import { Route as EmpresaRouteImport } from './routes/empresa'
+import { Route as ProductoRouteImport } from './routes/producto'
+import { Route as RecursosRouteImport } from './routes/recursos'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as SolucionesRouteImport } from './routes/soluciones'
+import { Route as TecnologiaRouteImport } from './routes/tecnologia'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ContactoRoute = ContactoRouteImport.update({
+  id: '/contacto',
+  path: '/contacto',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EmpresaRoute = EmpresaRouteImport.update({
+  id: '/empresa',
+  path: '/empresa',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductoRoute = ProductoRouteImport.update({
+  id: '/producto',
+  path: '/producto',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RecursosRoute = RecursosRouteImport.update({
+  id: '/recursos',
+  path: '/recursos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SolucionesRoute = SolucionesRouteImport.update({
+  id: '/soluciones',
+  path: '/soluciones',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TecnologiaRoute = TecnologiaRouteImport.update({
+  id: '/tecnologia',
+  path: '/tecnologia',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/contacto': typeof ContactoRoute
+  '/empresa': typeof EmpresaRoute
+  '/producto': typeof ProductoRoute
+  '/recursos': typeof RecursosRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/soluciones': typeof SolucionesRoute
+  '/tecnologia': typeof TecnologiaRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/contacto': typeof ContactoRoute
+  '/empresa': typeof EmpresaRoute
+  '/producto': typeof ProductoRoute
+  '/recursos': typeof RecursosRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/soluciones': typeof SolucionesRoute
+  '/tecnologia': typeof TecnologiaRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/contacto': typeof ContactoRoute
+  '/empresa': typeof EmpresaRoute
+  '/producto': typeof ProductoRoute
+  '/recursos': typeof RecursosRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/soluciones': typeof SolucionesRoute
+  '/tecnologia': typeof TecnologiaRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/contacto'
+    | '/empresa'
+    | '/producto'
+    | '/recursos'
+    | '/sitemap.xml'
+    | '/soluciones'
+    | '/tecnologia'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/contacto'
+    | '/empresa'
+    | '/producto'
+    | '/recursos'
+    | '/sitemap.xml'
+    | '/soluciones'
+    | '/tecnologia'
+  id:
+    | '__root__'
+    | '/'
+    | '/contacto'
+    | '/empresa'
+    | '/producto'
+    | '/recursos'
+    | '/sitemap.xml'
+    | '/soluciones'
+    | '/tecnologia'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ContactoRoute: typeof ContactoRoute
+  EmpresaRoute: typeof EmpresaRoute
+  ProductoRoute: typeof ProductoRoute
+  RecursosRoute: typeof RecursosRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  SolucionesRoute: typeof SolucionesRoute
+  TecnologiaRoute: typeof TecnologiaRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +143,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contacto': {
+      id: '/contacto'
+      path: '/contacto'
+      fullPath: '/contacto'
+      preLoaderRoute: typeof ContactoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/empresa': {
+      id: '/empresa'
+      path: '/empresa'
+      fullPath: '/empresa'
+      preLoaderRoute: typeof EmpresaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/producto': {
+      id: '/producto'
+      path: '/producto'
+      fullPath: '/producto'
+      preLoaderRoute: typeof ProductoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/recursos': {
+      id: '/recursos'
+      path: '/recursos'
+      fullPath: '/recursos'
+      preLoaderRoute: typeof RecursosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/soluciones': {
+      id: '/soluciones'
+      path: '/soluciones'
+      fullPath: '/soluciones'
+      preLoaderRoute: typeof SolucionesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tecnologia': {
+      id: '/tecnologia'
+      path: '/tecnologia'
+      fullPath: '/tecnologia'
+      preLoaderRoute: typeof TecnologiaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ContactoRoute: ContactoRoute,
+  EmpresaRoute: EmpresaRoute,
+  ProductoRoute: ProductoRoute,
+  RecursosRoute: RecursosRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
+  SolucionesRoute: SolucionesRoute,
+  TecnologiaRoute: TecnologiaRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
