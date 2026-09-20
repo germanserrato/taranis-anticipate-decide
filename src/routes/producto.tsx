@@ -1,0 +1,6 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { ProductMockup } from "@/components/taranis/product-mockup";
+import { PageIntro, SectionHeader } from "@/components/taranis/shared";
+import { Features, ProductSection } from "@/components/taranis/home-sections";
+
+export const Route=createFileRoute("/producto")({head:()=>({meta:[{title:"Producto | TARANIS"},{name:"description",content:"Descubre la plataforma TARANIS de predicción hidrológica, visualización territorial y alerta temprana."},{property:"og:title",content:"Producto | TARANIS"},{property:"og:description",content:"Predicción hidrológica y decisión territorial desde una sola plataforma."},{property:"og:type",content:"product"},{name:"twitter:card",content:"summary_large_image"},{property:"og:url",content:"/producto"}],links:[{rel:"canonical",href:"/producto"}]}),component:()=> <PageIntro eyebrow="Producto" title={<>Inteligencia hidrológica,<br/>en operación.</>} text="Una plataforma para integrar datos, ejecutar modelos y convertir escenarios complejos en una lectura territorial clara."><section className="section-space bg-background"><div className="section-shell"><SectionHeader eyebrow="Vista de producto" title="Una interfaz para comprender lo que viene."/><ProductMockup className="mt-14"/></div></section><ProductSection/><Features/></PageIntro>});
